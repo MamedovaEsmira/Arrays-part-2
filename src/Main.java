@@ -1,5 +1,5 @@
 import java.util.Arrays;
-import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         int[] salary = generateRandomArray();
@@ -14,6 +14,17 @@ public class Main {
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         reverse(reverseFullName);
         System.out.println();
+        System.out.println("Task №5: повышенная сложность");
+        matrix();
+        System.out.println("Task №6: повышенная сложность");
+        numbers();
+        System.out.println("Task №7: повышенная сложность");
+        numbers1();
+        System.out.println("Task №8: очень сложно");
+        int [] arr = new int[]{-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        twoSum(arr);
+        System.out.println("Task №9: очень сложно");
+        twoSum1(arr);
     }
 
 
@@ -95,6 +106,74 @@ public class Main {
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
             System.out.print(reverseFullName[i]);
         }
+    }
+
+    public static void matrix() {
+        int[] number1 = {1, 1, 1};
+        int[] number2 = {1, 1, 1};
+        int[] number3 = {1, 1, 1};
+        int[][] matrix = {number1, number2, number3};
+        for (int[] row : matrix) {
+            for (int column : row) {
+                System.out.print(column + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static void numbers() {
+        int[] arr = {5, 4, 3, 2, 1};
+        int[] arrReverse = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            arrReverse[i] = arr[arr.length - i - 1];
+        }
+        System.out.println(Arrays.toString(arr));
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arrReverse[i];
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static void numbers1() {
+        int[] arr = {5, 4, 7, 3, 6};
+        System.out.println(Arrays.toString(arr));
+        int i = 0;
+        int j=arr.length-1;
+        int tmp;
+        while (j>i){
+            tmp=arr[j];
+            arr[j]=arr[i];
+            arr[i]=tmp;
+            j--;
+            i++;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+    public static int twoSum(int[] arr){
+        arr = new int[]{-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+       int  sum = -2;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j =i + 1; j <arr.length ; j++) {
+                if (arr[i] + arr[j] == sum) {
+                    System.out.println(arr[i]+" + "+arr[j]+" = "+sum);
+                }
+            }
+           break;
+        }
+        return sum;
+    }
+    public static int twoSum1(int[] arr){
+        arr = new int[]{-6, 2, 5, -8, 8, 10, 4, -7, 12, 1};
+        int  sum = -2;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j =i + 1; j <arr.length ; j++) {
+                if (arr[i] + arr[j] == sum) {
+                    System.out.println(arr[i]+" + "+arr[j]+" = "+sum);
+                }
+            }
+        }
+        return sum;
     }
 }
 
